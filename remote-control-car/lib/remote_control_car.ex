@@ -6,8 +6,7 @@ defmodule RemoteControlCar do
     distance_driven_in_meters: 0,
   ]
 
-  def new(), do: %RemoteControlCar{nickname: "none"}
-  def new(nickname), do: %RemoteControlCar{nickname: nickname}
+  def new(nickname \\ "none"), do: %RemoteControlCar{nickname: nickname}
 
   def display_distance(remote_car) when is_struct(remote_car, RemoteControlCar),
     do: to_string(remote_car.distance_driven_in_meters) <> " meters"
